@@ -1,3 +1,24 @@
+.grid-layout {
+  position: absolute;
+  bottom: 0; /* Allign grid to bottom */
+}
+
+.square {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+  line-height: 30px;
+}
+
+.light-background {
+  background-color: #f0d9b5; /* Light color */
+}
+
+.dark-background {
+  background-color: #b58863; /* Dark color */
+}
+
 .App {
   text-align: center;
 }
