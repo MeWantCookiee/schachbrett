@@ -3,16 +3,15 @@ import './App.css';
 import Square from './Square.js';
 
 function GridArray({ xSize, ySize }) {    
-  //debugger;
+  if(xSize > 100 || xSize < 2 || ySize > 100 || ySize < 2) 
+    return <div>Bitte geben Sie einen Wert zwischen 2 und 100 ein für X und Y</div>
+
   let gridArray = [];
   
-  console.log(xSize, ySize);
-  
-  //TODO; check for each?
-  for(let i = 0; i < ySize; i++) {//create rows
+  for(let i = 0; i <= ySize; i++) {//create rows
     const row = [];
-    for(let j = 0; j < xSize; j++) { //create columns
-      row.push(1); //if push() is empty, nothing is pushed
+    for(let j = 0; j <= xSize; j++) { //create columns
+      row.push(1); //if push() is empty, nothing gets pushed
     }
     gridArray.push(row);      
   }
@@ -21,9 +20,9 @@ function GridArray({ xSize, ySize }) {
     <div className="grid"> 
     {//Draw chess grid
       gridArray.map((row, rowId) => (
-        <div key={rowId}>
+        <div className="row" key={rowId} >
           {row.map((node, nodeId) => (
-              <Square row={rowId} col={nodeId} />
+              <Square key={nodeId} row={rowId} col={nodeId} display = "" name = {nodeId}/>
             ))}
         </div>
       ))}
@@ -44,7 +43,6 @@ export default function Board() {
     setYSize(ySizeRef.current.value);
   }
 
-  //TODO: add error handling for x/y 
   return (
     <>
       <div>
