@@ -15,4 +15,4 @@ Klonen sie das Repository.
 - Geben sie in der Kommandozeile ein `npm start`.
   - In ihrem Browser öffnet ein Link zu http://localhost:3000/. Dort ist die Schachbrett Webanwendung aufzufinden.
  
-### [Verwendete Quellen](/Sources.md)
+### [Verwendete Quellen](Sources.md)
