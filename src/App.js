@@ -3,9 +3,9 @@ import './App.css';
 import Square from './Square.js';
 
 function GridArray({ xSize, ySize }) {    
-  if(xSize > 100 || xSize < 2 || ySize > 100 || ySize < 2) 
+  if(xSize > 100 || xSize < 2 || ySize > 100 || ySize < 2) {
     return <div>Bitte geben Sie einen Wert zwischen 2 und 100 ein für X und Y</div>
-
+  }
   let gridArray = [];
   
   for(let i = 0; i <= ySize; i++) {//create rows
@@ -16,10 +16,9 @@ function GridArray({ xSize, ySize }) {
     gridArray.push(row);      
   }
   
-  return(
+  return( //Draw chess grid
     <div className="grid"> 
-    {//Draw chess grid
-      gridArray.map((row, rowId) => (
+    {gridArray.map((row, rowId) => (
         <div className="row" key={rowId} >
           {row.map((node, nodeId) => (
               <Square key={nodeId} row={rowId} col={nodeId} display = "" name = {nodeId}/>
@@ -32,7 +31,8 @@ function GridArray({ xSize, ySize }) {
 
 
 export default function Board() {
-  const xSizeRef = useRef(null); /* useRef() returns a mutable ref object whose .current property is initialized to the passed argument ( initialValue ).  */
+  /* useRef() returns a mutable ref object whose .current property is initialized to the passed argument ( initialValue ).  */
+  const xSizeRef = useRef(null); 
   const ySizeRef = useRef(null);  
 
   const [xSize,  setXSize] = useState(0);
